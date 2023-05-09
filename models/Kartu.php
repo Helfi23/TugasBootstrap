@@ -1,14 +1,14 @@
 <?php
 class Kartu{
-    private $connection;
+    private $koneksi;
     public function __construct()
     {
         global $dbh;
-        $this->connection = $dbh;
+        $this->koneksi = $dbh;
     }
     public function dataKartu(){
         $sql = "SELECT * FROM kartu";
-        $ps = $this->connection->prepare($sql);
+        $ps = $this->koneksi->prepare($sql);
         $ps->execute();
         $rs = $ps->fetchAll();
         return $rs;
