@@ -1,14 +1,14 @@
 <?php
 class Pelanggan{
-    private $connection;
+    private $koneksi;
     public function __construct()
     {
         global $dbh;
-        $this->connection = $dbh;
+        $this->koneksi = $dbh;
     }
     public function dataPelanggan(){
         $sql = "SELECT * FROM pelanggan";
-        $ps = $this->connection->prepare($sql);
+        $ps = $this->koneksi->prepare($sql);
         $ps->execute();
         $rs = $ps->fetchAll();
         return $rs;
